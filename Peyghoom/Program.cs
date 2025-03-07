@@ -1,4 +1,6 @@
 
+using Peyghoom.Configurations;
+
 namespace Peyghoom
 {
     public class Program
@@ -10,6 +12,8 @@ namespace Peyghoom
             // Add services to the container.
 
             builder.Services.AddControllers();
+            // custom configurations
+            builder.AddServiceConfiguration();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
