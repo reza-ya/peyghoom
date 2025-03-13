@@ -25,7 +25,7 @@ namespace Peyghoom.Controllers.V1.Auth
         [HttpPost("Login")]
         public async Task<ActionResult<User>> LoginAsync(CancellationToken cancellationToken)
         {
-            var client = new MongoClient("mongodb://rezayari.ir:27017/?directConnection=true&serverSelectionTimeoutMS=2000");
+            var client = new MongoClient("mongodb://admin:reza%401618033988@rezayari.ir:27018/?directConnection=true&serverSelectionTimeoutMS=2000");
             var database = client.GetDatabase("rpeyghoom");
             var collection = database.GetCollection<User>("users");
             var user = await collection.Find(user => user.Email == "rezaayaari@gmail.com").FirstOrDefaultAsync();
@@ -38,7 +38,7 @@ namespace Peyghoom.Controllers.V1.Auth
             //await _authService.CheckTokenValidityAsync(cancellationToken);
 
             //await _authService.GenerateTokenAsync(cancellationToken);
-            
+
             return user;
         }
         
